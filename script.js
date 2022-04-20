@@ -20,6 +20,9 @@ var spelerY = 600; // y-positie van speler
 var vijandX = 600;
 var vijandY = 500;
 
+var kogelX = 600;
+var kogelY = 200;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -44,6 +47,7 @@ spelerY = spelerY +3;
   // vijand
 
   // kogel
+  kogelY = kogelY +9;
 };
 
 /**
@@ -60,7 +64,12 @@ var verwerkBotsing = function () {
     console.log("Botsing");
       }
   // botsing kogel tegen vijand
-
+    if (kogelX - vijandX < 50 &&
+      kogelX - vijandX >-50 &&
+      kogelY - vijandY <50 &&
+      kogelY - vijandY > -50) {
+    console.log("Botsing");
+      }
   // update punten en health
 
 };
@@ -78,7 +87,8 @@ var tekenAlles = function () {
   
   
   // kogel
-
+  fill("black");
+  rect(kogelX, kogelY, 30, 30)
   // speler
   fill("white");
   rect(spelerX - 25, spelerY - 25, 50, 50);
