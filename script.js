@@ -17,6 +17,9 @@ var spelStatus = SPELEN;
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
+var vijandX = 600;
+var vijandY = 500;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -26,7 +29,18 @@ var spelerY = 600; // y-positie van speler
  */
 var beweegAlles = function () {
   // speler
-
+  if (keyIsDown(68)) {
+spelerX = spelerX +3;
+  }
+  if (keyIsDown(65)) {
+spelerX = spelerX -3;
+  }
+  if (keyIsDown(87)) {
+spelerY = spelerY -3;
+  }
+  if (keyIsDown(83)) {
+spelerY = spelerY +3;
+  }
   // vijand
 
   // kogel
@@ -39,7 +53,12 @@ var beweegAlles = function () {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-
+  if (spelerX - vijandX < 50 &&
+      spelerX - vijandX >-50 &&
+      spelerY - vijandY <50 &&
+      spelerY - vijandY > -50) {
+    console.log("Botsing");
+      }
   // botsing kogel tegen vijand
 
   // update punten en health
@@ -51,9 +70,13 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-
+  fill("blue")
+  rect(0,0,1280,720)
   // vijand
-
+  fill("red");
+  rect(vijandX - 25, vijandY - 25, 50, 50)
+  
+  
   // kogel
 
   // speler
@@ -61,7 +84,7 @@ var tekenAlles = function () {
   rect(spelerX - 25, spelerY - 25, 50, 50);
   fill("black");
   ellipse(spelerX, spelerY, 10, 10);
-
+  
   // punten en health
 
 };
