@@ -18,10 +18,10 @@ var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
 
 var vijandX = 600;
-var vijandY = 500;
+var vijandY = 100;
 
-var kogelX = 600;
-var kogelY = 200;
+var kogelX = spelerX - 15;
+var kogelY = spelerY - 45;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -47,7 +47,8 @@ spelerY = spelerY +3;
   // vijand
 
   // kogel
-  kogelY = kogelY +9;
+if (mouseIsPressed)
+  kogelY = kogelY -9;
 };
 
 /**

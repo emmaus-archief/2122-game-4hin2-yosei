@@ -3,7 +3,7 @@
 ## Mijn spel: *naam van het spel*
 Gemaakt door:
 - *Yosei*
-- *Damian*
+
 
 ### Beschrijving
 *korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
