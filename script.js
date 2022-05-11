@@ -85,7 +85,7 @@ var tekenAlles = function () {
   // vijand
   fill("red");
   rect(vijandX - 25, vijandY - 25, 50, 50)
-  
+  a
   
   // kogel
   fill("black");
