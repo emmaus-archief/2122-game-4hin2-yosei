@@ -47,8 +47,14 @@ spelerY = spelerY +3;
   // vijand
 
   // kogel
-if (mouseIsPressed)
+if (mouseIsPressed) {
+  kogelY= spelerY;
+  kogelX=spelerX;
+}
   kogelY = kogelY -9;
+  if (kogelY < 0) {
+    kogelY=0;
+  }
 };
 
 /**
