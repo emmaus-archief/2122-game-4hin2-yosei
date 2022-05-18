@@ -45,6 +45,10 @@ spelerY = spelerY -3;
 spelerY = spelerY +3;
   }
   // vijand
+  vijandX = vijandX -5;
+  if (vijandX < 0){
+    vijandX=0;
+  }
 
   // kogel
 if (mouseIsPressed) {
