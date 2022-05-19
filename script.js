@@ -16,6 +16,7 @@ var spelStatus = SPELEN;
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
+var aantal = 9;
 
 var vijandX = 600;
 var vijandY = 100;
@@ -47,7 +48,7 @@ spelerY = spelerY +3;
   // vijand
   vijandX = vijandX -5;
   if (vijandX < 0){
-    vijandX=0;
+    vijandX=1280;
   }
 
   // kogel
@@ -68,12 +69,7 @@ if (mouseIsPressed) {
  */
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
-  if (spelerX - vijandX < 50 &&
-      spelerX - vijandX >-50 &&
-      spelerY - vijandY <50 &&
-      spelerY - vijandY > -50) {
-    console.log("Botsing");
-      }
+
   // botsing kogel tegen vijand
     if (kogelX - vijandX < 50 &&
       kogelX - vijandX >-50 &&
@@ -115,6 +111,15 @@ var tekenAlles = function () {
  * anders return false
  */
 var checkGameOver = function () {
+    if (spelerX - vijandX < 50 &&
+      spelerX - vijandX >-50 &&
+      spelerY - vijandY <50 &&
+      spelerY - vijandY > -50) {
+    console.log("Botsing");
+      return true;
+      }
+  
+  
   // check of HP 0 is , of tijd op is, of ...
   return false;
 };
@@ -151,6 +156,7 @@ function draw() {
     }
   }
   if (spelStatus === GAMEOVER) {
+    console.log("game over")
     // teken game-over scherm
 
   }
