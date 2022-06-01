@@ -24,6 +24,7 @@ var vijandY = 100;
 
 var kogelX = spelerX - 15;
 var kogelY = spelerY - 45;
+var kogelVliegt = false;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -53,13 +54,18 @@ spelerY = spelerY +3;
   }
 
   // kogel
-if (mouseIsPressed) {
-  kogelY= spelerY;
-  kogelX=spelerX;
+if (kogelVliegt === false &&
+    mouseIsPressed) {
+  kogelVliegt = true;
+  kogelY = spelerY;
+  kogelX = spelerX;
 }
-  kogelY = kogelY -9;
-  if (kogelY < 0) {
-    kogelY=0;
+  if (kogelVliegt === true) {  
+    kogelY = kogelY - 15;
+  }
+  if (kogelVliegt === true &&
+     kogelY < -5) { 
+    kogelVliegt = false;
   }
 };
 
@@ -96,7 +102,7 @@ var tekenAlles = function () {
   
   // kogel
   fill("black");
-  rect(kogelX, kogelY, 30, 30)
+  ellipse(kogelX, kogelY, 30, 30)
   // speler
   fill("white");
   rect(spelerX - 25, spelerY - 25, 50, 50);
