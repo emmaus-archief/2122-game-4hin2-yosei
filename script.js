@@ -12,7 +12,8 @@
 
 const SPELEN = 1;
 const GAMEOVER = 2;
-var spelStatus = SPELEN;
+const UITLEG = 3;
+var spelStatus = UITLEG;
 
 var spelerX = 600; // x-positie van speler
 var spelerY = 600; // y-positie van speler
@@ -157,7 +158,31 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     console.log("game over")
+    textSize(50);
+    fill("red");
+    text("game over, druk op enter om opnieuw te beginnen", 87, 300);
+    if (keyIsDown(13)){ //enter
+      spelStatus = UITLEG;
+    }    
     // teken game-over scherm
 
   }
+    if (spelStatus === UITLEG) {
+      console.log("uitleg")
+      textSize(20);
+      fill("blue")
+      rect(0,0, 1280, 720);
+      fill("white")
+      text("uitleg", 600, 300);
+      text("wasd om te bewegen en linkermuisknop om te schieten op de vijanden en als je wordt geraakt ben je af", 147, 340);
+      text("druk op spatie om te beginnen", 147, 360)
+      if (keyIsDown(32)){ //spatie
+        spelerX = 600;
+        spelerY = 600;
+        spelStatus = SPELEN;
+      }
+      
+    // teken uitleg scherm
+      
+    }
 }
