@@ -48,9 +48,9 @@ spelerY = spelerY -3;
 spelerY = spelerY +3;
   }
   // vijand
-  vijandX = vijandX -5;
-  if (vijandX < 0){
-    vijandX=1280;
+  vijandY = vijandY -5;
+  if (vijandY < 0){
+    vijandY=1280;
   }
 
   // kogel
