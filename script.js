@@ -26,6 +26,8 @@ var kogelX = spelerX - 15;
 var kogelY = spelerY - 45;
 var kogelVliegt = false;
 
+var score = 0;
+
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -83,6 +85,7 @@ var verwerkBotsing = function () {
       kogelY - vijandY <50 &&
       kogelY - vijandY > -50) {
     console.log("Botsing");
+      score = score + 1;
       }
   // update punten en health
 
