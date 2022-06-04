@@ -15,18 +15,19 @@ const GAMEOVER = 2;
 const UITLEG = 3;
 var spelStatus = UITLEG;
 
-var spelerX = 100; // x-positie van speler
+var spelerX = 1180; // x-positie van speler
 var spelerY = 360; // y-positie van speler
 var aantal = 9;
 
-var vijandX = 300;
-var vijandY = 320;
+var vijandX = -40;
+var vijandY = 300;
 
 var kogelX = 2000;
 var kogelY = 2000;
 var kogelVliegt = false;
 
 var score = 0;
+var HP = 3;
 
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
@@ -45,9 +46,8 @@ spelerY = spelerY +3;
   }
   // vijand
   vijandX = vijandX +5;
-  if (vijandX < 1290){
-    vijandX=0;
-  }
+  
+
 
   // kogel
 if (kogelVliegt === false &&
@@ -155,6 +155,10 @@ function draw() {
     beweegAlles();
     verwerkBotsing();
     tekenAlles();
+    textSize(40)
+    fill("white")
+    text(score, 100,100)
+    text(HP, 100,140)
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
