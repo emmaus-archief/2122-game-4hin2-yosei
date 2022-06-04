@@ -15,8 +15,8 @@ const GAMEOVER = 2;
 const UITLEG = 3;
 var spelStatus = UITLEG;
 
-var spelerX = 600; // x-positie van speler
-var spelerY = 600; // y-positie van speler
+var spelerX = 100; // x-positie van speler
+var spelerY = 360; // y-positie van speler
 var aantal = 9;
 
 var vijandX = 600;
@@ -63,10 +63,10 @@ if (kogelVliegt === false &&
   kogelX = spelerX;
 }
   if (kogelVliegt === true) {  
-    kogelY = kogelY - 15;
+    kogelX = kogelX - 15;
   }
   if (kogelVliegt === true &&
-     kogelY < -5) { 
+     kogelX < -0) { 
     kogelVliegt = false;
   }
 };
@@ -186,8 +186,8 @@ function draw() {
       text("wasd om te bewegen en linkermuisknop om te schieten op de vijanden en als je wordt geraakt ben je af", 147, 340);
       text("druk op spatie om te beginnen", 147, 360)
       if (keyIsDown(32)){ //spatie
-        spelerX = 600;
-        spelerY = 600;
+        spelerX = 100;
+        spelerY = 360;
         spelStatus = SPELEN;
       }
       
