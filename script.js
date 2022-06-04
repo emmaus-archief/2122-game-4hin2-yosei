@@ -19,11 +19,11 @@ var spelerX = 100; // x-positie van speler
 var spelerY = 360; // y-positie van speler
 var aantal = 9;
 
-var vijandX = 600;
-var vijandY = 100;
+var vijandX = 300;
+var vijandY = 320;
 
-var kogelX = spelerX - 15;
-var kogelY = spelerY - 45;
+var kogelX = 2000;
+var kogelY = 2000;
 var kogelVliegt = false;
 
 var score = 0;
@@ -37,12 +37,6 @@ var score = 0;
  */
 var beweegAlles = function () {
   // speler
-  if (keyIsDown(68)) {
-spelerX = spelerX +3;
-  }
-  if (keyIsDown(65)) {
-spelerX = spelerX -3;
-  }
   if (keyIsDown(87)) {
 spelerY = spelerY -3;
   }
@@ -50,9 +44,9 @@ spelerY = spelerY -3;
 spelerY = spelerY +3;
   }
   // vijand
-  vijandY = vijandY -5;
-  if (vijandY < 0){
-    vijandY=1280;
+  vijandX = vijandX +5;
+  if (vijandX < 1290){
+    vijandX=0;
   }
 
   // kogel
@@ -186,7 +180,7 @@ function draw() {
       text("wasd om te bewegen en linkermuisknop om te schieten op de vijanden en als je wordt geraakt ben je af", 147, 340);
       text("druk op spatie om te beginnen", 147, 360)
       if (keyIsDown(32)){ //spatie
-        spelerX = 100;
+        spelerX = 1180;
         spelerY = 360;
         spelStatus = SPELEN;
       }
