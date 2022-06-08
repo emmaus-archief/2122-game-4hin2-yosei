@@ -28,7 +28,7 @@ var kogelVliegt = false;
 
 var score = 0;
 var HP = 3;
-
+var snelheid = 3;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -38,15 +38,16 @@ var HP = 3;
  */
 var beweegAlles = function () {
   // speler
-  if (keyIsDown(87)) {
-spelerY = spelerY -3;
+  if (spelerY < 700 && keyIsDown(83) ){
+    spelerY = spelerY + snelheid;
   }
-  if (keyIsDown(83)) {
-spelerY = spelerY +3;
+  if (spelerY > 20 && keyIsDown(87)){
+    spelerY = spelerY - snelheid; 
   }
+
   // vijand
   vijandX = vijandX +5;
-  
+
 
 
   // kogel
@@ -80,6 +81,7 @@ var verwerkBotsing = function () {
       kogelY - vijandY > -50) {
     console.log("Botsing");
       score = score + 1;
+      vijandX = vijandX + 1100;
       }
   // update punten en health
 
