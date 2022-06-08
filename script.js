@@ -22,9 +22,10 @@ var aantal = 9;
 var vijandX = -40;
 var vijandY = 300;
 
-var kogelX = 2000;
+var kogelX = [2000,2100,2200,2300,2400,2500,2600];
 var kogelY = 2000;
 var kogelVliegt = false;
+var kogel;
 
 var score = 0;
 var HP = 3;
@@ -53,6 +54,11 @@ var beweegAlles = function () {
 
 
   // kogel
+while (kogel < kogelX.length){
+  fill("black")
+  ellipse(20,20,kogelX[kogel],kogelY)
+}
+  
 if (kogelVliegt === false &&
     mouseIsPressed) {
   kogelVliegt = true;
