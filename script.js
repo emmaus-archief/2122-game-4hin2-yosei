@@ -38,12 +38,14 @@ var snelheid = 3;
  */
 var beweegAlles = function () {
   // speler
-  if (spelerY < 700 && keyIsDown(83) ){
-    spelerY = spelerY + snelheid;
-  }
-  if (spelerY > 20 && keyIsDown(87)){
+  if (spelerY > 27 && keyIsDown(87)){
     spelerY = spelerY - snelheid; 
   }
+  
+  if (spelerY < 693 && keyIsDown(83) ){
+    spelerY = spelerY + snelheid;
+  }
+
 
   // vijand
   vijandX = vijandX +5;
