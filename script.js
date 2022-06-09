@@ -39,18 +39,26 @@ var snelheid = 3;
  */
 var beweegAlles = function () {
   // speler
-  if (spelerY > 27 && keyIsDown(87)){
-    spelerY = spelerY - snelheid; 
+  if (keyIsDown(87)){
+  spelerY = spelerY - 5;
+}
+  if (keyIsDown(83)){
+    spelerY = spelerY + 5;
   }
   
-  if (spelerY < 693 && keyIsDown(83) ){
-    spelerY = spelerY + snelheid;
+  if (spelerY === 5 && keyIsDown(87)){
+    spelerY = 720; 
   }
+  
+  if (spelerY === 715 && keyIsDown(83) ){
+    spelerY = 0;
+  }
+
 
 
   // vijand
   vijandX = vijandX +5;
-
+  
 
 
   // kogel
@@ -66,7 +74,7 @@ if (kogelVliegt === false &&
   kogelX = spelerX;
 }
   if (kogelVliegt === true) {  
-    kogelX = kogelX - 15;
+    kogelX = kogelX - 30;
   }
   if (kogelVliegt === true &&
      kogelX < -0) { 
@@ -89,11 +97,14 @@ var verwerkBotsing = function () {
       kogelY - vijandY > -50) {
     console.log("Botsing");
       score = score + 1;
-      vijandX = vijandX + 1100;
+      vijandX = -30;
+      vijandY = random(720)
+      kogelX = -30;
       }
   // update punten en health
 
 };
+
 
 /**
  * Tekent spelscherm
@@ -196,6 +207,8 @@ function draw() {
       if (keyIsDown(32)){ //spatie
         spelerX = 1180;
         spelerY = 360;
+        vijandX = -40;
+        vijandY=random(720)
         spelStatus = SPELEN;
       }
       
