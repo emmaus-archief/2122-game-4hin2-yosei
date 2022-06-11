@@ -59,10 +59,9 @@ var beweegAlles = function () {
   // vijand
   vijandX = vijandX +5;
   if (vijandX > 1300) {
-    HP = HP - 1;
-    vijandX = -30;
-    vijandY = random(720)
-    
+  HP = HP - 1;
+  vijandX = -30;
+  vijandY = random(720)
   }
 
 
@@ -117,7 +116,7 @@ var verwerkBotsing = function () {
 var tekenAlles = function () {
   // achtergrond
   fill("blue")
-  rect(0,0,1280,720)w
+  rect(0,0,1280,720)
   // vijand
   fill("red");
   rect(vijandX - 25, vijandY - 25, 50, 50)
@@ -141,7 +140,13 @@ var tekenAlles = function () {
  * anders return false
  */
 var checkGameOver = function () {
-
+    if (spelerX - vijandX < 50 &&
+      spelerX - vijandX >-50 &&
+      spelerY - vijandY <50 &&
+      spelerY - vijandY > -50) {
+    console.log("Botsing");
+      return true;
+      }
   
   
   // check of HP 0 is , of tijd op is, of ...
