@@ -29,7 +29,7 @@ var kogel;
 
 var score = 0;
 var HP = 3;
-var snelheid = 3;
+var snelheid = 5;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -57,7 +57,7 @@ var beweegAlles = function () {
 
 
   // vijand
-  vijandX = vijandX +5;
+  vijandX = vijandX + snelheid;
   if (vijandX > 1300) {
   HP = HP - 1;
   vijandX = -30;
@@ -210,6 +210,7 @@ function draw() {
         spelerY = 360;
         vijandX = -40;
         vijandY=random(720)
+        HP = 3;
         spelStatus = SPELEN;
       }
       
