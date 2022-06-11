@@ -211,6 +211,7 @@ function draw() {
         vijandX = -40;
         vijandY=random(720)
         HP = 3;
+        score = 0;
         spelStatus = SPELEN;
       }
       
