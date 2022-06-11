@@ -140,10 +140,7 @@ var tekenAlles = function () {
  * anders return false
  */
 var checkGameOver = function () {
-    if (spelerX - vijandX < 50 &&
-      spelerX - vijandX >-50 &&
-      spelerY - vijandY <50 &&
-      spelerY - vijandY > -50) {
+    if (HP < 1) {
     console.log("Botsing");
       return true;
       }
