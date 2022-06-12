@@ -62,11 +62,6 @@ var beweegAlles = function () {
   if (spelerY > 715 && keyIsDown(83) ){
     spelerY = 0;
   }
-    if(score === s[i]){
-    snelheid = snelheid + 1
-    i = i + 1
-    }
-
 
 
   // vijand
@@ -96,6 +91,13 @@ if (kogelVliegt === false &&
     kogelVliegt = false;
   }
 };
+
+  //snelheid dat steeds meer wordt
+   if(score === s[i]){
+   snelheid = snelheid + 1
+   i = i + 1
+   }
+
 
 /**
  * Checkt botsingen
@@ -160,7 +162,8 @@ var checkGameOver = function () {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
-function preload() {
+//alle images van dit spel
+function preload() {  
   img = loadImage('space.png');
   img2 = loadImage('kogel.png')
   img3 = loadImage('spaceship.png')
@@ -192,8 +195,10 @@ function draw() {
     tekenAlles();
     textSize(40)
     fill("white")
-    text(score, 100,100)
+    text("HP",40,140)
+    text(score, 200,100)
     text(HP, 100,140)
+    text("SCORE",40,100)
     if (checkGameOver()) {
       spelStatus = GAMEOVER;
     }
@@ -205,6 +210,8 @@ function draw() {
     text("GAME OVER", 380, 100);
     textSize(50);
     text("PRESS ENTER TO RESTART", 340, 200)
+    text("Finally score :", 340, 400)
+    text(score,670, 400)
     if (keyIsDown(13)){ //enter
       spelStatus = UITLEG;
     }    
@@ -213,17 +220,18 @@ function draw() {
   }
     if (spelStatus === UITLEG) {
       console.log("uitleg")
-      textSize(20);
+      textSize(80);
       fill("blue")
       rect(0,0, 1280, 720);
       fill("white")
-      text("uitleg", 600, 300);
-      text("WS om te bewegen en linkermuisknop om te schieten op de vijanden. Als je 3 keer een vijand mist ben je af.", 147, 340);
-      text("druk op spatie om te beginnen", 147, 360)
+      text("Shoot the spaceships", 220, 300);
+      textSize(30);
+      text("WS om te bewegen en linkermuisknop voor schieten", 287, 340);
+      text("druk op spatie om te beginnen", 420, 380)
       if (keyIsDown(32)){ //spatie
         spelerX = 1180;
         spelerY = 360;
-        vijandX = -40;
+        vijandX = -100;
         vijandY=random(720)
         HP = 3;
         score = 0;
