@@ -32,7 +32,12 @@ var HP = 3;
 var snelheid = 5;
 
 var s = [15,16,17,18,19,20,21,22,23,24,25];
-var n = 0;
+var i = 0;
+
+var img;
+var img2;
+var img3;
+var img4;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -56,9 +61,9 @@ var beweegAlles = function () {
   if (spelerY > 715 && keyIsDown(83) ){
     spelerY = 0;
   }
-    if(score === s[n]){
+    if(score === s[i]){
     snelheid = snelheid + 1
-    n = n + 1
+    i = i + 1
     }
 
 
@@ -75,11 +80,7 @@ var beweegAlles = function () {
   }
 
   // kogel
-while (kogel < kogelX.length){
-  fill("black")
-  ellipse(20,20,kogelX[kogel],kogelY)
-}
-  
+
 if (kogelVliegt === false &&
     mouseIsPressed) {
   kogelVliegt = true;
@@ -100,6 +101,7 @@ if (kogelVliegt === false &&
  * Verwijdert neergeschoten dingen
  * Updatet globale variabelen punten en health
  */
+
 var verwerkBotsing = function () {
   // botsing speler tegen vijand
 
@@ -124,22 +126,18 @@ var verwerkBotsing = function () {
  */
 var tekenAlles = function () {
   // achtergrond
-  fill("blue")
-  rect(0,0,1280,720)
+  image(img, 0,0,1280,720);
+
   // vijand
-  fill("red");
-  rect(vijandX - 25, vijandY - 25, 50, 50)
+  image(img4, vijandX,vijandY,60,60);
   
   
   // kogel
-  fill("black");
-  rect(kogelX, kogelY, 30, 2)
+  image(img2, kogelX,kogelY,30,10);
   // speler
-  fill("white");
-  rect(spelerX - 25, spelerY - 25, 50, 50);
-  fill("black");
-  ellipse(spelerX, spelerY, 10, 10);
-  
+  image(img3, spelerX,spelerY,60,60);
+    
+
   // punten en health
 
 };
@@ -162,7 +160,12 @@ var checkGameOver = function () {
 /* ********************************************* */
 /* setup() en draw() functies / hoofdprogramma   */
 /* ********************************************* */
-
+function preload() {
+  img = loadImage('space.png');
+  img2 = loadImage('kogel.png')
+  img3 = loadImage('spaceship.png')
+  img4 = loadImage('vijand.png')
+}
 /**
  * setup
  * de code in deze functie wordt één keer uitgevoerd door
@@ -221,6 +224,7 @@ function draw() {
         vijandY=random(720)
         HP = 3;
         score = 0;
+        snelheid = 5;
         spelStatus = SPELEN;
       }
       
