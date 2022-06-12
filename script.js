@@ -203,7 +203,7 @@ function draw() {
       rect(0,0, 1280, 720);
       fill("white")
       text("uitleg", 600, 300);
-      text("wasd om te bewegen en linkermuisknop om te schieten op de vijanden en als je wordt geraakt ben je af", 147, 340);
+      text("WS om te bewegen en linkermuisknop om te schieten op de vijanden. Als je 3 keer een vijand mist ben je af.", 147, 340);
       text("druk op spatie om te beginnen", 147, 360)
       if (keyIsDown(32)){ //spatie
         spelerX = 1180;
