@@ -22,7 +22,7 @@ var aantal = 9;
 var vijandX = -40;
 var vijandY = 300;
 
-var kogelX = [2000,2100,2200,2300,2400,2500,2600];
+var kogelX = 2000;
 var kogelY = 2000;
 var kogelVliegt = false;
 var kogel;
