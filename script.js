@@ -81,7 +81,7 @@ if (kogelVliegt === false &&
     kogelX = kogelX - 30;
   }
   if (kogelVliegt === true &&
-     kogelX < -0) { 
+     kogelX < -20) { 
     kogelVliegt = false;
   }
 };
@@ -124,7 +124,7 @@ var tekenAlles = function () {
   
   // kogel
   fill("black");
-  ellipse(kogelX, kogelY, 30, 30)
+  rect(kogelX, kogelY, 30, 2)
   // speler
   fill("white");
   rect(spelerX - 25, spelerY - 25, 50, 50);
@@ -147,7 +147,7 @@ var checkGameOver = function () {
   
   
   // check of HP 0 is , of tijd op is, of ...
-  return false;
+  return false;w
 };
 
 /* ********************************************* */
