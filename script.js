@@ -63,7 +63,9 @@ var beweegAlles = function () {
   vijandX = -30;
   vijandY = random(720)
   }
-
+  if (score === 20) {
+    snelheid = 8;
+  }
 
   // kogel
 while (kogel < kogelX.length){
