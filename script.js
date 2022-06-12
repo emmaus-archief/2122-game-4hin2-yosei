@@ -1,4 +1,4 @@
-/* Game opdracht
+/*  Game opdracht
    Informatica - Emmauscollege Rotterdam
    Template voor een game in JavaScript met de p5 library
 
