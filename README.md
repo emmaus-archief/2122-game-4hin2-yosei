@@ -6,7 +6,7 @@ Gemaakt door:
 
 
 ### Beschrijving
-*korte beschrijving van het spel, wat je kunt doen in het spel, wat het doel is*
+*je moet de vijanden steeds beschieten zodat je blijft overleven*
 
 ## Mijn planning
 Werk de planning af van boven naar beneden<br>
@@ -23,29 +23,29 @@ Basis: uitleg, spelen, afgaan en punten
         - Gebruik variabalen spelerX en spelerY als middelpunt van de speler
 - [x] 4. *(pas de volgende stappen in de planning zelf aan)*
 - [x] x. teken je tegenspeler (vijanden of dingen die je moet pakken of doelen of ...)
-- [ ] x. teken een bal, kogel (als die in je spel zit)
-- [ ] x. beweeg de tegenspeler of je bal
-- [ ] x. zet punten op het scherm 
-- [ ] x. zorg dat je punten kunt scoren
-- [ ] x. zorg dat je af kunt
-- [ ] x. maak game-over-scherm
-- [ ] x. maak uitlegscherm
+- [x] x. teken een bal, kogel (als die in je spel zit)
+- [x] x. beweeg de tegenspeler of je bal
+- [x] x. zet punten op het scherm 
+- [x] x. zorg dat je punten kunt scoren
+- [x] x. zorg dat je af kunt
+- [x] x. maak game-over-scherm
+- [x] x. maak uitlegscherm
 
 ### Uitbreidingen 1
 Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
+- [x] *HP toevoegen*
+- [x] *kogels goed maken*
+- [x] *plaatjes op alles*
 
 ### Uitbreidingen 2
 Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
+- [x] *als de player bovenin gaat dat je naar beneden gaat en andersom*
+- [x] *vijand op random plekken laten komen*
+- [x] *snelheid veranderen van vijanden*
 
 ### Ideeen voor uitbreidingen
 Kies de uitbreidingen die je leuk vindt en maak je game nog mooier
-- [ ] Gebruik plaatjes voor de vijanden
+- [x] Gebruik plaatjes voor de vijanden
 - [ ] Animeer speler
 - [ ] Laat badges vallen die extra's aan speler geven
 - [ ] Maak spel steeds moeilijker door toenemend aantal vijanden met tekenVijand

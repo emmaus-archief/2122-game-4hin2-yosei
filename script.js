@@ -69,7 +69,7 @@ var beweegAlles = function () {
   if (vijandX > 1300) {
   HP = HP - 1;
   vijandX = -30;
-  vijandY = random(720)
+  vijandY = random(700)
   }
   if (score === 20) {
     snelheid = 8;
@@ -98,6 +98,9 @@ if (kogelVliegt === false &&
    i = i + 1
    }
 
+    if(HP === 1){
+      
+    }
 
 /**
  * Checkt botsingen
