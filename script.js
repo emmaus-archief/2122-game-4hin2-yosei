@@ -30,6 +30,9 @@ var kogel;
 var score = 0;
 var HP = 3;
 var snelheid = 5;
+
+var s = [15,16,17,18,19,20,21,22,23,24,25];
+var n = 0;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -40,19 +43,23 @@ var snelheid = 5;
 var beweegAlles = function () {
   // speler
   if (keyIsDown(87)){
-  spelerY = spelerY - 5;
+  spelerY = spelerY - 7;
 }
   if (keyIsDown(83)){
-    spelerY = spelerY + 5;
+    spelerY = spelerY + 7;
   }
   
-  if (spelerY === 5 && keyIsDown(87)){
+  if (spelerY < 5 && keyIsDown(87)){
     spelerY = 720; 
   }
   
-  if (spelerY === 715 && keyIsDown(83) ){
+  if (spelerY > 715 && keyIsDown(83) ){
     spelerY = 0;
   }
+    if(score === s[n]){
+    snelheid = snelheid + 1
+    n = n + 1
+    }
 
 
 
