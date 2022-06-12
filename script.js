@@ -38,6 +38,7 @@ var img;
 var img2;
 var img3;
 var img4;
+var img5;
 /* ********************************************* */
 /* functies die je gebruikt in je game           */
 /* ********************************************* */
@@ -131,11 +132,10 @@ var tekenAlles = function () {
   // vijand
   image(img4, vijandX,vijandY,60,60);
   
-  
   // kogel
   image(img2, kogelX,kogelY,30,10);
   // speler
-  image(img3, spelerX,spelerY,60,60);
+  image(img3, spelerX-10,spelerY-25,60,60);
     
 
   // punten en health
@@ -165,6 +165,7 @@ function preload() {
   img2 = loadImage('kogel.png')
   img3 = loadImage('spaceship.png')
   img4 = loadImage('vijand.png')
+  img5 = loadImage('gameover.png')
 }
 /**
  * setup
@@ -199,9 +200,11 @@ function draw() {
   }
   if (spelStatus === GAMEOVER) {
     console.log("game over")
-    textSize(50);
+    textSize(90);
     fill("red");
-    text("game over, druk op enter om opnieuw te beginnen", 87, 300);
+    text("GAME OVER", 380, 100);
+    textSize(50);
+    text("PRESS ENTER TO RESTART", 340, 200)
     if (keyIsDown(13)){ //enter
       spelStatus = UITLEG;
     }    
